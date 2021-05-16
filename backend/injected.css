@@ -1,0 +1,24 @@
+/**
+The styling rules injected into the current window / tab.
+**/
+
+.highlighted {
+  transition: 10ms all ease-in-out;
+  outline: 2px red solid;
+  background: rgba(255, 0, 0, 0.096);
+  cursor: crosshair !important;
+}
+
+#popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  pointer-events: none;
+  padding: 5px 10px;
+}
+
+.hidden {
+  visibility: hidden;
+}
