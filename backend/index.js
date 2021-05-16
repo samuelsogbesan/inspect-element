@@ -6,15 +6,27 @@ document.body.appendChild(popup);
 
 const getSelector = element => (element.classList.length > 0 && element.className !== 'highlighted' ? `.${element.getAttribute('class')}` : '').replace('highlighted', '').trim().replace(' ', '.') + (element.id !== '' ? `#${element.id}` : '');
 
+let inspectorTarget_Click = (event) => {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+
+  alert(event.target);
+
+  event.target.removeEventListener('click', inspectorTarget_Click);
+  storage.set('isInspectorActive', false);
+}
+
 let highlight = (target) => {
   target.classList.add('highlighted');
   popup.innerHTML = getSelector(target);
   popup.classList.remove('hidden');
+  target.addEventListener('click', inspectorTarget_Click);
 }
 
 let removeHighlight = (target) => {
   target.classList.remove('highlighted');
   popup.classList.add('hidden');
+  target.removeEventListener('click', inspectorTarget_Click);
 }
 
 /**
