@@ -22,8 +22,10 @@ const main = async () => {
   let val = await storage.get('isInspectorActive');
   if (val === true) {
     addButton.value = 'deactivate';
-  } else {
+  } else if (val === false) {
     addButton.value = 'activate';
+  } else {
+    storage.set('isInspectorActive', false);
   }
 }
 
