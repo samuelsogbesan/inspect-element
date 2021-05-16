@@ -17,7 +17,6 @@ let removeHighlight = (target) => {
   popup.classList.add('hidden');
 }
 
-
 /**
  * Handles the functionality for inspector mode.
  * @param {*} event 
