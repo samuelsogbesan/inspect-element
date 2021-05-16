@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Inspect Element", 
+  "description": "Inspect Element as Chrome Extension",
+  "browser_action": {
+      "default_icon": "assets/icon.png",
+      "default_popup": "frontend/popup.html"
+  },
+  "permissions": [
+      "activeTab",
+      "storage",
+      "alarms"
+   ],
+   "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css" : ["backend/injected.css"],
+      "js": ["backend/index.js"]
+    }
+   ]
+}
