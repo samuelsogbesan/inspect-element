@@ -10,7 +10,7 @@ The styling rules injected into the current window / tab.
 }
 
 #popup {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: black;
